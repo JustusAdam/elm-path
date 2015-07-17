@@ -311,7 +311,10 @@ combine path1 path2 =
       case (path1, path2) of
         ("", b) -> b
         (a, "") -> a
-        (a, b) -> a ++ pathSeparator ++ b
+        (a, b) ->
+          if isPathSeparator a
+            then a ++b
+            else addTrailingPathSeparator a ++ b
 
 
 -- | Operator version ov 'combine'
@@ -329,7 +332,10 @@ combine path1 path2 =
 -- > Windows: splitPath "c:\\test\\path" == ["c:\\","test\\","path"]
 -- > Posix:   splitPath "/file/test" == ["/","file/","test"]
 splitPath : String -> List String
-splitPath = String.split pathSeparator
+splitPath path =
+  case String.split pathSeparator path of
+    (x::xs) -> if x == "" then pathSeparator::xs else x::xs
+    a -> a
 
 
 -- | Join path elements back together.
@@ -339,7 +345,7 @@ splitPath = String.split pathSeparator
 -- > joinPath [] == ""
 -- > Posix: joinPath ["test","file","path"] == "test/file/path"
 joinPath : List String -> String
-joinPath = String.join pathSeparator
+joinPath = List.foldr combine ""
 
 
 -- | Is an item either a directory or the last character a path separator?
