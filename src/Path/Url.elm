@@ -23,6 +23,15 @@ module Path.Url (
     dropTrailingPathSeparator
     ) where
 
+{-|
+  Specialized path manipulation functions for working with filepaths as found on the web.
+
+  Reexports all functions from the 'Path.Generic' module, specialized to web related paths.
+
+  Since operator reexport does not seem to work, <.> and -<.> have to be imported from the Generic module directly.
+
+  @docs (</>)
+-}
 
 import Path.Generic as Generic
 
