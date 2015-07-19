@@ -36,7 +36,7 @@ If you use the specialized versions from 'Path.Windows', 'Path.Posix' or 'Path.U
 @docs pathSeparator, pathSeparators, isPathSeparator, extSeparator, isExtSeparator
 
 # Extension functions
-@dosc splitExtension, takeExtension, replaceExtension, (-<.>), dropExtension, addExtension, hasExtension, (<.>), splitExtensions, dropExtensions, takeExtensions
+@docs splitExtension, takeExtension, replaceExtension, (-<.>), dropExtension, addExtension, hasExtension, (<.>), splitExtensions, dropExtensions, takeExtensions
 
 # Filename/directory functions
 @docs splitFileName, takeFileName, replaceFileName, dropFileName, takeBaseName, replaceBaseName, takeDirectory, replaceDirectory, combine, splitPath, joinPath
