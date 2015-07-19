@@ -23,6 +23,18 @@ module Path.Windows (
     dropTrailingPathSeparator
     ) where
 
+{-|
+  Specialized path manipulation functions for working with Windows paths.
+
+  This module is not very well tested. PLease make sure the functions you use work as expected.
+
+  Reexports all functions from the 'Path.Generic' module, specialized to Windows paths.
+
+  Since operator reexport does not seem to work, <.> and -<.> have to be imported from the Generic module directly.
+
+  @docs (</>)
+-}
+
 
 import Path.Generic as Generic
 
@@ -61,14 +73,16 @@ replaceBaseName = Generic.replaceBaseName currPlatform
 takeDirectory = Generic.takeDirectory currPlatform
 replaceDirectory = Generic.replaceDirectory currPlatform
 combine = Generic.combine currPlatform
-
-{-|
-  Operator Version of 'combine'
--}
-(</>) = combine
 splitPath = Generic.splitPath currPlatform
 joinPath = Generic.joinPath currPlatform
 
 hasTrailingPathSeparator = Generic.hasTrailingPathSeparator currPlatform
 addTrailingPathSeparator = Generic.addTrailingPathSeparator currPlatform
 dropTrailingPathSeparator = Generic.dropTrailingPathSeparator currPlatform
+
+
+{-|
+  Operator Version of 'combine'
+-}
+(</>) : String -> String -> String
+(</>) = combine

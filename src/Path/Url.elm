@@ -61,14 +61,15 @@ replaceBaseName = Generic.replaceBaseName currPlatform
 takeDirectory = Generic.takeDirectory currPlatform
 replaceDirectory = Generic.replaceDirectory currPlatform
 combine = Generic.combine currPlatform
-
-{-|
-  Operator Version of 'combine'
--}
-(</>) = combine
 splitPath = Generic.splitPath currPlatform
 joinPath = Generic.joinPath currPlatform
 
 hasTrailingPathSeparator = Generic.hasTrailingPathSeparator currPlatform
 addTrailingPathSeparator = Generic.addTrailingPathSeparator currPlatform
 dropTrailingPathSeparator = Generic.dropTrailingPathSeparator currPlatform
+
+{-|
+  Operator Version of 'combine'
+-}
+(</>) : String -> String -> String
+(</>) = combine
