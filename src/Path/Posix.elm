@@ -24,12 +24,13 @@ module Path.Posix (
     ) where
 
 {-|
-  Specialized path manipulation functions for working with Posix paths.
+  Specialized path manipulation functions for working with Posix paths. For documentation on the API refer to 'Path.Generic'.
 
   Reexports all functions from the 'Path.Generic' module, specialized to Posix paths.
 
   Since operator reexport does not seem to work, <.> and -<.> have to be imported from the Generic module directly.
 
+  # Specialized operators
   @docs (</>)
 -}
 

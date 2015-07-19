@@ -24,7 +24,7 @@ module Path.Windows (
     ) where
 
 {-|
-  Specialized path manipulation functions for working with Windows paths.
+  Specialized path manipulation functions for working with Windows paths. For documentation on the API refer to 'Path.Generic'.
 
   This module is not very well tested. PLease make sure the functions you use work as expected.
 
@@ -32,6 +32,7 @@ module Path.Windows (
 
   Since operator reexport does not seem to work, <.> and -<.> have to be imported from the Generic module directly.
 
+  # Specialized operators
   @docs (</>)
 -}
 

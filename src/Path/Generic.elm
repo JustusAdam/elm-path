@@ -27,6 +27,8 @@ module Path.Generic (
 {-|
   Functions for working with paths, parameterized over the platform.
 
+  If you use the specialized versions from 'Path.Windows', 'Path.Posix' or 'Path.Url' the 'Platform' parameter is to be omitted.
+
   # Platforms
   @docs Platform
 

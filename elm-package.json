@@ -1,5 +1,5 @@
 {
-    "version": "1.1.0",
+    "version": "1.2.0",
     "summary": "Path manipulations for elm programs",
     "repository": "https://github.com/JustusAdam/elm-path.git",
     "license": "MIT",
@@ -7,6 +7,7 @@
         "src"
     ],
     "exposed-modules": [
+        "Path.Generic",
         "Path.Posix",
         "Path.Windows",
         "Path.Url"
