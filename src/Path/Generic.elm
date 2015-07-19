@@ -56,9 +56,9 @@ infixr 7 -<.>
 {-|
 Available platforms for path manipulations.
 
-Windows, Posix are relatively self explanatory
+'Windows', 'Posix' are relatively self explanatory
 
-Url is specialized to filepaths as used on the web
+'Url' is specialized to filepaths as used on the web
 -}
 type Platform
   = Posix
@@ -68,7 +68,7 @@ type Platform
 
 {-|
 The character that separates directories. In the case where more than
-one character is possible, 'pathSeparator' is the \'ideal\' one.
+one character is possible, `pathSeparator` is the 'ideal' one.
 
     Windows: pathSeparator == '\\'
     Posix:   pathSeparator ==  '/'
@@ -94,7 +94,7 @@ pathSeparators platform =
     _ -> ["/"]
 
 {-|
-Rather than using @(== 'pathSeparator')@, use this. Test if somethin is a path separator.
+Rather than using `== pathSeparator`, use this. Test if somethin is a path separator.
 
     isPathSeparator a == (a `elem` pathSeparators)
 -}
@@ -121,7 +121,7 @@ isExtSeparator = (==) extSeparator
 
 
 {-|
-Split on the extension. 'addExtension' is the inverse.
+Split on the extension. `addExtension` is the inverse.
 
     splitExtension "/directory/path.ext" == ("/directory/path",".ext")
     uncurry (++) (splitExtension x) == x
@@ -143,7 +143,7 @@ splitExtension path =
 
 
 {-|
-Get the extension of a file, returns @\"\"@ for no extension, @.ext@ otherwise.
+Get the extension of a file, returns "" for no extension, .ext otherwise.
 
     takeExtension "/directory/path.ext" == ".ext"
     takeExtension x == snd (splitExtension x)
@@ -155,7 +155,7 @@ takeExtension = splitExtension >> snd
 
 
 {-|
-Set the extension of a file, overwriting one if already present, equivalent to '-<.>'.
+Set the extension of a file, overwriting one if already present, equivalent to `-<.>`.
 
     replaceExtension "/directory/path.txt" "ext" == "/directory/path.ext"
     replaceExtension "/directory/path.txt" ".ext" == "/directory/path.ext"
@@ -171,13 +171,15 @@ replaceExtension path ext =
   splitExtension path |> fst |> (flip (++) <| normalizeExt ext)
 
 
--- | Operator version of 'replaceExtension'
+{-|
+Operator version of `replaceExtension`
+-}
 (-<.>) : String -> String -> String
 (-<.>) = replaceExtension
 
 
 {-|
-Remove last extension, and the \".\" preceding it.
+Remove last extension, and the "." preceding it.
 
     dropExtension "/directory/path.ext" == "/directory/path"
     dropExtension x == fst (splitExtension x)
@@ -187,7 +189,7 @@ dropExtension = splitExtension >> fst
 
 
 {-|
-Add an extension, even if there is already one there, equivalent to '<.>'.
+Add an extension, even if there is already one there, equivalent to `<.>`.
 
     addExtension "/directory/path" "ext" == "/directory/path.ext"
     addExtension "file.txt" "bib" == "file.txt.bib"
@@ -201,7 +203,9 @@ addExtension : String -> String -> String
 addExtension path = (++) path << normalizeExt
 
 
--- | Operator version of 'addExtension'
+{-|
+Operator version of `addExtension`
+-}
 (<.>) : String -> String -> String
 (<.>) = addExtension
 
@@ -259,7 +263,7 @@ dropExtensions = splitExtensions >> fst
 {-|
 Operations on a filepath, as a list of directories
 
-Split a filename into directory and file. 'combine' is the inverse.
+Split a filename into directory and file. `combine` is the inverse.
 The first component will often end with a trailing slash.
 
     splitFileName "/directory/file.ext" == ("/directory/","file.ext")
@@ -302,7 +306,7 @@ replaceFileName platform path = (++) <| dropFileName platform path
 
 
 {-|
-Drop the filename. Unlike 'takeDirectory', this function will leave
+Drop the filename. Unlike `takeDirectory`, this function will leave
 a trailing path separator on the directory.
 
     dropFileName "/directory/file.ext" == "/directory/"
