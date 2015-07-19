@@ -1,4 +1,4 @@
-module Path.Windows (
+module Path.Url (
     -- * Separator predicates
     pathSeparator, pathSeparators, isPathSeparator,
     extSeparator, isExtSeparator,
@@ -29,7 +29,7 @@ import Path.Generic as Generic
 
 infixr 5  </>
 
-currPlatform = Generic.Windows
+currPlatform = Generic.Url
 
 
 pathSeparator = Generic.pathSeparator currPlatform
