@@ -25,24 +25,24 @@ module Path.Generic (
     dropTrailingPathSeparator
     ) where
 {-|
-  Functions for working with paths, parameterized over the platform.
+Functions for working with paths, parameterized over the platform.
 
-  If you use the specialized versions from 'Path.Windows', 'Path.Posix' or 'Path.Url' the 'Platform' parameter is to be omitted.
+If you use the specialized versions from 'Path.Windows', 'Path.Posix' or 'Path.Url' the 'Platform' parameter is to be omitted.
 
-  # Platforms
-  @docs Platform
+# Platforms
+@docs Platform
 
-  # Separator predicates
-  @docs pathSeparator, pathSeparators, isPathSeparator, extSeparator, isExtSeparator
+# Separator predicates
+@docs pathSeparator, pathSeparators, isPathSeparator, extSeparator, isExtSeparator
 
-  # Extension functions
-  @dosc splitExtension, takeExtension, replaceExtension, (-<.>), dropExtension, addExtension, hasExtension, (<.>), splitExtensions, dropExtensions, takeExtensions
+# Extension functions
+@dosc splitExtension, takeExtension, replaceExtension, (-<.>), dropExtension, addExtension, hasExtension, (<.>), splitExtensions, dropExtensions, takeExtensions
 
-  # Filename/directory functions
-  @docs splitFileName, takeFileName, replaceFileName, dropFileName, takeBaseName, replaceBaseName, takeDirectory, replaceDirectory, combine, splitPath, joinPath
+# Filename/directory functions
+@docs splitFileName, takeFileName, replaceFileName, dropFileName, takeBaseName, replaceBaseName, takeDirectory, replaceDirectory, combine, splitPath, joinPath
 
-  # Trailing slash functions
-  @docs hasTrailingPathSeparator, addTrailingPathSeparator, dropTrailingPathSeparator
+# Trailing slash functions
+@docs hasTrailingPathSeparator, addTrailingPathSeparator, dropTrailingPathSeparator
 -}
 
 

@@ -24,14 +24,14 @@ module Path.Url (
     ) where
 
 {-|
-  Specialized path manipulation functions for working with filepaths as found on the web. For documentation on the API refer to 'Path.Generic'.
+Specialized path manipulation functions for working with filepaths as found on the web. For documentation on the API refer to 'Path.Generic'.
 
-  Reexports all functions from the 'Path.Generic' module, specialized to web related paths.
+Reexports all functions from the 'Path.Generic' module, specialized to web related paths.
 
-  Since operator reexport does not seem to work, <.> and -<.> have to be imported from the Generic module directly.
+Since operator reexport does not seem to work, <.> and -<.> have to be imported from the Generic module directly.
 
-  # Specialized operators
-  @docs (</>)
+# Specialized operators
+@docs (</>)
 -}
 
 import Path.Generic as Generic
