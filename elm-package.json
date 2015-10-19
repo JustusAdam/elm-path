@@ -1,5 +1,5 @@
 {
-    "version": "1.2.3",
+    "version": "1.2.4",
     "summary": "Path manipulations for elm programs",
     "repository": "https://github.com/JustusAdam/elm-path.git",
     "license": "MIT",

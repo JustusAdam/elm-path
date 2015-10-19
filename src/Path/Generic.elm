@@ -77,7 +77,7 @@ one character is possible, `pathSeparator` is the 'ideal' one.
 pathSeparator : Platform -> String
 pathSeparator platform =
   case platform of
-    Windows -> "\\\\"
+    Windows -> "\\"
     _ -> "/"
 
 {-|
@@ -90,7 +90,7 @@ The list of all possible separators.
 pathSeparators : Platform -> List String
 pathSeparators platform =
   case platform of
-    Windows -> ["/", "\\\\"]
+    Windows -> ["/", "\\"]
     _ -> ["/"]
 
 {-|
