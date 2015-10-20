@@ -5,5 +5,7 @@ import Graphics.Element exposing (show,Element,leftAligned)
 import Text
 
 main : Element
-main = leftAligned << Text.monospace << Text.fromString <|
-  "currPlatform = " ++ toString currPlatform
+main = "currPlatform = " ++ toString currPlatform
+  |> Text.fromString
+  |> Text.monospace
+  |> leftAligned
