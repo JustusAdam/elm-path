@@ -51,19 +51,21 @@ Since operator reexport does not seem to work, <.> and -<.> have to be imported 
 
 import Path.Generic as Generic
 import Native.CurrPlatform
-
+import String
 
 infixr 5  </>
 
-currPlatform' : Generic.Platform -> Generic.Platform -> Generic.Platform
-currPlatform' = Native.CurrPlatform.currPlatform
+navigatorPlatform : String
+navigatorPlatform = Native.CurrPlatform.navigatorPlatform
 
 {-|
   The current operating system type. This is a runtime constant determined
   by `navigator.platform`. If it starts with `Win` its `Windows` otherwise its `Posix`.
 -}
 currPlatform : Generic.Platform
-currPlatform = currPlatform' Generic.Windows Generic.Posix
+currPlatform =
+  if String.startsWith "Win" navigatorPlatform
+  then Generic.Windows else Generic.Posix
 
 {-|
   Operator Version of 'combine'
