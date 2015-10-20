@@ -1,4 +1,4 @@
-module Path.Windows (
+module Path.Current (
     -- * Separator predicates
     pathSeparator, pathSeparators, isPathSeparator,
     extSeparator, isExtSeparator,
@@ -55,7 +55,7 @@ import Path.Generic as Generic
 infixr 5  </>
 
 currPlatform : Generic.Platform
-currPlatform = Generic.Windows
+currPlatform = Native.Path.currPlatform Generic.Windows Generic.Posix
 
 {-|
   Operator Version of 'combine'
