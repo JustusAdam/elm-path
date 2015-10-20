@@ -45,7 +45,10 @@ Since operator reexport does not seem to work, <.> and -<.> have to be imported 
 @docs hasTrailingPathSeparator, addTrailingPathSeparator, dropTrailingPathSeparator
 
 # Specialized operators
-@docs (</>), takeFileName, currPlatform
+@docs (</>)
+
+# The current platform determined at runtime
+@docs currPlatform
 -}
 
 
