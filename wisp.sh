@@ -1,1 +1,1 @@
-cat src/Native/CurrentPlatform.wisp | wisp > src/Native/CurrentPlatform.js
+cat src/Native/CurrPlatform.wisp | wisp > src/Native/CurrPlatform.js

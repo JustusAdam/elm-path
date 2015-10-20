@@ -14,7 +14,7 @@ module Path.Current (
     takeFileName, replaceFileName, dropFileName,
     takeBaseName, replaceBaseName,
     takeDirectory, replaceDirectory,
-    combine, (</>),
+    combine, (</>), currPlatform,
     splitPath, joinPath,
 
     -- * Trailing slash functions
@@ -45,17 +45,25 @@ Since operator reexport does not seem to work, <.> and -<.> have to be imported 
 @docs hasTrailingPathSeparator, addTrailingPathSeparator, dropTrailingPathSeparator
 
 # Specialized operators
-@docs (</>), takeFileName
+@docs (</>), takeFileName, currPlatform
 -}
 
 
 import Path.Generic as Generic
+import Native.CurrPlatform
 
 
 infixr 5  </>
 
+currPlatform' : Generic.Platform -> Generic.Platform -> Generic.Platform
+currPlatform' = Native.CurrPlatform.currPlatform
+
+{-|
+  The current operating system type. This is a runtime constant determined
+  by `navigator.platform`. If it starts with `Win` its `Windows` otherwise its `Posix`.
+-}
 currPlatform : Generic.Platform
-currPlatform = Native.Path.currPlatform Generic.Windows Generic.Posix
+currPlatform = currPlatform' Generic.Windows Generic.Posix
 
 {-|
   Operator Version of 'combine'

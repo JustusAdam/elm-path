@@ -8,6 +8,7 @@
     ],
     "native-modules": true,
     "exposed-modules": [
+        "Path.Current",
         "Path.Generic",
         "Path.Posix",
         "Path.Windows",
