@@ -7,13 +7,12 @@
         "src"
     ],
     "exposed-modules": [
-        "Path.Current",
         "Path.Generic",
         "Path.Posix",
         "Path.Windows",
         "Path.Url"
     ],
-    "native-modules": true,
+    "native-modules": false,
     "dependencies": {
         "elm-lang/core": "2.0.0 <= v < 4.0.0"
     },
